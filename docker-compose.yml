@@ -1,0 +1,19 @@
+version: "3.4"
+services:
+  app:
+    build:
+      dockerfile: ./docker/images/app/Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - main
+    restart: "always"
+
+  mysql:
+    image: mysql:8.0-bookworm
+    networks:
+      - main
+    restart: "always"
+
+networks:
+  main: { }

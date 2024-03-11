@@ -1,0 +1,53 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2021",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@common/*": [
+        "src/shared/common/*"
+      ],
+      "@decorator/*": [
+        "src/shared/decorator/*"
+      ],
+      "@adapter/*": [
+        "src/shared/adapter/*"
+      ],
+      "@guard/*": [
+        "src/shared/guard/*"
+      ],
+      "@infra/*": [
+        "src/shared/infra/*"
+      ],
+      "@users-domain/*": [
+        "src/module/users/src/domain/*"
+      ],
+      "@users-delivery/*": [
+        "src/module/users/src/app/delivery/*"
+      ],
+      "@users-service/*": [
+        "src/module/users/src/app/service/*"
+      ],
+      "@users-repository/*": [
+        "src/module/users/src/app/repository/*"
+      ],
+      "@users-infra/*": [
+        "src/module/users/src/infra/*"
+      ]
+    }
+  }
+}

@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "e7ae1f27-9b18-44c2-b810-19769edb8380",
+		"name": "sampa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2760138"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "test@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "this-is-my-password",
+							"type": "text"
+						},
+						{
+							"key": "confirmPassword",
+							"value": "this-is-my-password",
+							"type": "text"
+						},
+						{
+							"key": "bio",
+							"value": "This is my bio",
+							"type": "text"
+						},
+						{
+							"key": "location[lat]",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "location[long]",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": "/home/pooya/Downloads/question.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{server}}/api/v1/users/register",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test@example.com\",\n    \"password\": \"this-is-my-password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}/api/v1/users/login",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "me",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0N2QwNmUwYy1jMzNlLTRlMDEtOTQ3Ny1lMTZlMDY5NWEwMDkiLCJpYXQiOjE3MTAxNjg5OTF9.j2SGgKhJLfY9pkJVc1cge50T2BdqnFPgSQM9s7Zdl94",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/api/v1/users/me",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "feed",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0N2QwNmUwYy1jMzNlLTRlMDEtOTQ3Ny1lMTZlMDY5NWEwMDkiLCJpYXQiOjE3MTAxNjg5OTF9.j2SGgKhJLfY9pkJVc1cge50T2BdqnFPgSQM9s7Zdl94",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/api/v1/users/:userId/feed",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						":userId",
+						"feed"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "47d06e0c-c33e-4e01-9477-e16e0695a009"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "like",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0N2QwNmUwYy1jMzNlLTRlMDEtOTQ3Ny1lMTZlMDY5NWEwMDkiLCJpYXQiOjE3MTAxNjg5OTF9.j2SGgKhJLfY9pkJVc1cge50T2BdqnFPgSQM9s7Zdl94",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/api/v1/users/:userId/like/:likeUserId",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						":userId",
+						"like",
+						":likeUserId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "47d06e0c-c33e-4e01-9477-e16e0695a009"
+						},
+						{
+							"key": "likeUserId",
+							"value": "0dba29d7-65d5-4dec-81a3-6ca62d4ec7bc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dislike",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0N2QwNmUwYy1jMzNlLTRlMDEtOTQ3Ny1lMTZlMDY5NWEwMDkiLCJpYXQiOjE3MTAxNjg5OTF9.j2SGgKhJLfY9pkJVc1cge50T2BdqnFPgSQM9s7Zdl94",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/api/v1/users/:userId/dislike/:dislikeUserId",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						":userId",
+						"dislike",
+						":dislikeUserId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "47d06e0c-c33e-4e01-9477-e16e0695a009"
+						},
+						{
+							"key": "dislikeUserId",
+							"value": "0dba29d7-65d5-4dec-81a3-6ca62d4ec7bc"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "server",
+			"value": "http://127.0.0.1:3000"
+		}
+	]
+}
